@@ -9,6 +9,15 @@ import {
   CommandItem,
   CommandSeparator,
 } from "./ui/command";
+import {
+  Bell,
+  Cookie,
+  Fuel,
+  Inbox,
+  MessageSquare,
+  Settings,
+  User,
+} from "lucide-react";
 
 type Props = {};
 
@@ -19,18 +28,22 @@ const Sidebar = (props: Props) => {
       items: [
         {
           link: "/",
+          icon: <User />,
           text: "Profile",
         },
         {
           link: "/",
+          icon: <Inbox />,
           text: "Inbox",
         },
         {
           link: "/",
+          icon: <Fuel />,
           text: "Billing",
         },
         {
           link: "/",
+          icon: <Bell />,
           text: "Notifications",
         },
       ],
@@ -40,37 +53,45 @@ const Sidebar = (props: Props) => {
       items: [
         {
           link: "/",
+          icon: <Settings />,
           text: "General Settings",
         },
         {
           link: "/",
+          icon: <Cookie />,
           text: "Privacy",
         },
 
         {
           link: "/",
+          icon: <MessageSquare />,
           text: "Logs",
         },
       ],
     },
   ];
   return (
-    <div className="flex flex-col gap-2 w-[300px] min-w-[300px] min-h-screen border-r p-4">
+    <div className="fixed flex flex-col gap-2 w-[300px] min-w-[300px] min-h-screen border-r p-4">
       <div>
         {" "}
         <UserItem />
       </div>
       <div className="grow">
-        <Command>
-          <CommandList>
+        <Command style={{ overflow: "visible" }}>
+          <CommandList style={{ overflow: "visible" }}>
             {menuList.map((menu: any, key: number) => (
               <CommandGroup key={key} heading={menu.group}>
                 {menu.items.map((option: any, optionKey: number) => (
-                  <CommandItem key={optionKey}>{option.text}</CommandItem>
+                  <CommandItem
+                    key={optionKey}
+                    className="flex gap-2 cursor-pointer"
+                  >
+                    {option.icon}
+                    {option.text}
+                  </CommandItem>
                 ))}
               </CommandGroup>
             ))}
-            <CommandEmpty>No results found.</CommandEmpty>
 
             <CommandSeparator />
           </CommandList>
