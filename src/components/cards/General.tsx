@@ -6,6 +6,14 @@ type Props = {};
 
 import { ResponsiveBump } from "@nivo/bump";
 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
 // no chart will be rendered.
@@ -365,8 +373,14 @@ export default function General({}: Props) {
   ];
 
   return (
-    <div className="w-full h-[400px]">
-      <MyResponsiveBump data={data} />
-    </div>
+    <Card className="w-full">
+      <CardHeader>
+        <CardTitle>This week</CardTitle>
+        <CardDescription>These are the results of this week</CardDescription>
+      </CardHeader>
+      <CardContent className="grid gap-4 h-[400px]">
+        <MyResponsiveBump data={data} />
+      </CardContent>
+    </Card>
   );
 }
