@@ -71,9 +71,8 @@ const Sidebar = (props: Props) => {
     },
   ];
   return (
-    <div className="fixed flex flex-col gap-2 w-[300px] min-w-[300px] min-h-screen border-r p-4">
+    <div className="fixed flex flex-col gap-2 w-[300px] min-w-[300px] p-4 min-h-screen">
       <div>
-        {" "}
         <UserItem />
       </div>
       <div className="grow">

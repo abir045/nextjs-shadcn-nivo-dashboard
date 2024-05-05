@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CommandDemo } from "./Command";
 import { Button } from "./ui/button";
 import { Bell } from "lucide-react";
@@ -7,8 +7,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
@@ -27,6 +25,7 @@ export default function Header({}: Props) {
       read: false,
     },
   ]);
+
   return (
     <div className="grid grid-cols-2 gap-4 border-b p-4">
       <CommandDemo />
