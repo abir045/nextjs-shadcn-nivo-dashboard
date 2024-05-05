@@ -1,5 +1,5 @@
 import React from "react";
-import UserItem from "./UserItem";
+
 import {
   Command,
   CommandInput,
@@ -18,6 +18,9 @@ import {
   Settings,
   User,
 } from "lucide-react";
+
+import UserItem from "./UserItem";
+import Link from "next/link";
 
 type Props = {};
 
@@ -96,7 +99,12 @@ const Sidebar = (props: Props) => {
           </CommandList>
         </Command>
       </div>
-      <div>Settings</div>
+      <div>
+        <Link href="/team" className="flex items-center gap-2">
+          <Settings />
+          <span>Team Settings</span>
+        </Link>
+      </div>
     </div>
   );
 };

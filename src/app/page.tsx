@@ -19,7 +19,7 @@ export default function Home() {
         <General />
         <div className="grid  gap-[32px] ">
           <Calendar />
-          <Calendar />
+          {/* <Calendar /> */}
         </div>
       </div>
       <div className="grid lg:grid-cols-3  gap-[32px] lg:h-[300px] overflow-hidden">
